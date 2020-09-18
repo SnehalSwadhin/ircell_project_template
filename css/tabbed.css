@@ -2,16 +2,9 @@ body
 {
 	overflow-x: hidden;
 }
-#tabbed *{
-	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-#tabbed a {
-	text-decoration: none
-}
 
 #tabbed {
 	width: 100%;
-	margin:30px;
 	position: relative;
 	text-align: left;
 	-webkit-backface-visibility: hidden;
@@ -21,7 +14,7 @@ body
 	margin: 0;
 	display: block;
 	float: left;
-	width: 96%;
+	width: 100%;
 	clear: both
 }
 
@@ -62,8 +55,8 @@ body
 #tabbed .title.large {
 	font-size: 28px;
 	text-transform: uppercase;
-	border-bottom: solid 8px #f0f0f0;
-	padding-bottom: 16px
+	padding-bottom: 16px;
+	text-align: center;
 }
 
 #tabbed .title.normal {
@@ -268,12 +261,9 @@ body
 .collapsible {
   background-color: #EBEBEB;
   color: black;
-  border: 2px;
-  border-color: #777;
   border-radius: 1rem;
   cursor: pointer;
   width: 100% !important;
-  border: none;
   outline: none;
   font-size: 15px;
   transition: all 0.5s ease-out;
@@ -316,6 +306,10 @@ body
 span.lft {
 	float: left; 
 	width: 40%;
+	padding-right: 20px;
+}
+span.mid {
+	padding-right: 20px;
 }
 span.rgt {
 	float: right; 
@@ -327,7 +321,7 @@ span.rgt {
 	color: black;
 	position: relative;
 	display: inline-block;
-	height: 65px;
+	top: 20px;
 	border: none;
 	background-color: transparent;
 	transition: all 0.5s ease-out;
@@ -384,10 +378,6 @@ span.rgt {
 		width: 70px !important;
 		margin: 0 calc(50% - 5px) 10px calc(50% - 5px);
 	}
-	#tabbed
-	{
-		margin:10px;
-	}
 	#tabbed .row
 	{
 		width:94%;
@@ -433,4 +423,15 @@ input[type=file] {
 	input[type=file] {
 	  	left: unset;
 	}
+}
+.slider-area {
+	width: 100%;
+}
+.main-header {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+main {
+	background-image: url(../img/gallery/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
