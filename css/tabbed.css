@@ -8,7 +8,14 @@ body
 	position: relative;
 	text-align: left;
 	-webkit-backface-visibility: hidden;
-	padding: 150px 80px;
+	padding: 150px 80px 100px 80px;
+}
+
+@media screen and (max-width:650px) {
+	#tabbed {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
 }
 
 #tabbed .row {
@@ -454,7 +461,7 @@ main {
 		height: 30px;
 	}
 }
-@media screen and (min-width:992px) and (max-width:1064px) {
+@media screen and (min-width:992px) and (max-width:1124px) {
 	.header-area {
 		height: 120px;
 	}
