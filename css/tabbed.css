@@ -8,6 +8,7 @@ body
 	position: relative;
 	text-align: left;
 	-webkit-backface-visibility: hidden;
+	padding: 150px 80px;
 }
 
 #tabbed .row {
@@ -53,6 +54,7 @@ body
 	width: 15%
 }
 #tabbed .title.large {
+	font-family: Lato;
 	font-size: 28px;
 	text-transform: uppercase;
 	padding-bottom: 16px;
@@ -69,7 +71,7 @@ body
 #tabbed .title.small {
 	font-size: 20px;
 	color: #333;
-	font-weight: 400
+	font-weight: 700;
 }
 
 #tabbed .title.mini {
@@ -259,13 +261,14 @@ body
 	}
 }
 .collapsible {
-  background-color: #EBEBEB;
+  font-family: "Raleway";
+  background-color: #ffe8b1;
   color: black;
   border-radius: 1rem;
   cursor: pointer;
   width: 100% !important;
   outline: none;
-  font-size: 15px;
+  font-size: 17px;
   transition: all 0.5s ease-out;
 }
 .collapsible:hover{
@@ -283,7 +286,7 @@ body
 	height: 100%;
 	width: 95%;
 	position: relative;
-	display: inline-block;
+	display: inline-flex;
 	background-color: transparent;
 	border: none;
 	border-right: 1px;
@@ -291,6 +294,23 @@ body
 	padding: 20px; 
 	text-align: left;
 	transition: all 0.5s ease-out;
+}
+
+@media screen and (max-width:650px) {
+	.drop-tile {
+		display: inline-grid;
+		padding-right: 15px;
+		width: 90%;
+	}
+	.bookmark {
+		width: 10%;
+		padding-left: 0;
+	}
+	span.lft, span.mid, span.rgt {
+		padding: 0 !important;
+		width: 100% !important;
+		text-align: center !important
+	}
 }
 
 .collapsible:hover .drop-tile, 
@@ -301,7 +321,7 @@ body
 }
 
 .collapsible span {
-	min-width: 150px;
+	font-weight: 500;
 }
 span.lft {
 	float: left; 
@@ -309,10 +329,11 @@ span.lft {
 	padding-right: 20px;
 }
 span.mid {
-	padding-right: 20px;
+	width: 40%;
 }
 span.rgt {
-	float: right; 
+	width: 20%;
+	float: right;
 	text-align: right;
 }
 .bookmark {
@@ -347,15 +368,6 @@ span.rgt {
 		width: 10%;
 		padding-right: 10px;
 	}
-	.collapsible span {
-		min-width: 50px;
-		max-width: 200px;
-	}
-}
-@media screen and (max-width:720px) {
-	span.rgt {
-		margin-top: 20px;
-	}
 }
 
 .content {
@@ -377,10 +389,6 @@ span.rgt {
 	#tabbed .apply-cell {
 		width: 70px !important;
 		margin: 0 calc(50% - 5px) 10px calc(50% - 5px);
-	}
-	#tabbed .row
-	{
-		width:94%;
 	}
 }
 
@@ -409,7 +417,7 @@ span.rgt {
 	padding: 10px 30px;
 }
 .modal-body {
-	transition: all 0.5s ease-out;
+	font-weight: 500;
 }
 input[type=file] {
 	margin: 0;
@@ -430,8 +438,40 @@ input[type=file] {
 .main-header {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-main {
+.main-header {
 	background-image: url(../img/gallery/bg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
+}
+
+main {
+	background-color: #FFF9D6;
+}
+
+@media screen and (min-width:1065px) and (max-width:1400px) {
+	.header-area {
+		height: 30px;
+	}
+}
+@media screen and (min-width:992px) and (max-width:1064px) {
+	.header-area {
+		height: 120px;
+	}
+}
+@media screen and (max-width:992px) {
+	.header-area {
+		height: 0;
+	}
+}
+#site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all .3s ease;
+  box-shadow: 0 1px 25px rgba(0,0,0, .1);
+}
+#site-header.hide {
+  top: -30%;
 }
