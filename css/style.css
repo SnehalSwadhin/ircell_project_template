@@ -2661,51 +2661,23 @@ hr {
 }
 
 .header-area .header-bottom {
-	padding: 0px 80px
+	padding: 0px 80px;
+	box-shadow: 0 10px 15px rgba(25, 25, 25, 0.075);
 }
 
-@media screen and (max-width:1199px) {
-	.header-area .header-bottom  {
-		padding: 0 50px;
-	}
-}
-
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 651px) and (max-width: 991px){
 	.header-area .header-bottom {
-		padding: 22px 50px
+		padding-top: 22px;
+		padding-bottom: 22px;
 	}
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
+@media screen and (max-width: 650px) {
 	.header-area .header-bottom {
-		padding: 22px 20px
+		padding: 22px 40px
 	}
 }
 
-@media (max-width: 575px) {
-	.header-area .header-bottom {
-		padding: 22px 11px
-	}
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-	.header-area {
-		
-	}
-}
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-	.header-area {
-		box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1)
-	}
-}
-
-@media (max-width: 575px) {
-	.header-area {
-		box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1)
-	}
-}
 
 .header-area .header-top .header-info-left ul li {
 	color: #fff;
