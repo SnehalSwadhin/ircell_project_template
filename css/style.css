@@ -507,7 +507,7 @@ hr {
 
 .header-btn {
 	border: none;
-	padding: 16px 40px;
+	padding: 8px 20px;
 	text-transform: capitalize;
 	border-radius: 30px;
 	cursor: pointer;
@@ -2664,7 +2664,7 @@ hr {
 }
 
 .header-area .header-bottom {
-	padding: 0px 80px;
+	padding-left: 80px;
 	box-shadow: 0 10px 15px rgba(25, 25, 25, 0.075);
 }
 
@@ -2677,7 +2677,7 @@ hr {
 
 @media screen and (max-width: 650px) {
 	.header-area .header-bottom {
-		padding: 22px 40px
+		padding: 22px 0 22px 40px;
 	}
 }
 
