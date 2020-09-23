@@ -13,6 +13,8 @@ function prep_modal()
             pages.hide();
             pages.eq(0).show();
 
+            var form = document.getElementById("modal-form");
+
             var b_button = document.createElement("button");
                     b_button.setAttribute("type","button");
                         b_button.setAttribute("class","btn btn-primary");
@@ -24,39 +26,36 @@ function prep_modal()
                         n_button.setAttribute("class","btn btn-primary");
                         n_button.innerHTML = "Next";
 
-            $(element).find('.modal-footer').append(b_button).append(n_button);
+            var s_button = document.createElement("input");
+                    s_button.setAttribute("type","submit");
+                        s_button.setAttribute("class","btn btn-primary");
+                        s_button.setAttribute("style","display: none;");
+                        s_button.innerHTML = "Submit";
+
+            $(element).find('.modal-footer').append(b_button).append(n_button).append(s_button);
 
 
             var page_track = 0;
 
             $(n_button).click(function() {
-            
+
             element.blur();
-
-                if(page_track == 0)
-                {
-                    $(b_button).show();
-                }
-
-                if(page_track == pages.length-2)
-                {
-                    $(n_button).text("Submit");
-                }
-
-            if(page_track == pages.length-1)
-            {
-              $(element).find("form").submit();
+            if (page_track == 0) {
+                $(b_button).show();
             }
 
-                if(page_track < pages.length-1)
-                {
-                    page_track++;
-
-                    pages.hide();
-                    pages.eq(page_track).show();
-                }
+            if (page_track == pages.length - 2) {
+                $(n_button).hide();
+                $(s_button).show();
+            }
 
 
+            if (page_track < pages.length - 1) {
+                page_track++;
+
+                pages.hide();
+                pages.eq(page_track).show();
+            }
             });
 
             $(b_button).click(function() {
@@ -65,10 +64,10 @@ function prep_modal()
                 {
                     $(b_button).hide();
                 }
-
                 if(page_track == pages.length-1)
                 {
-                    $(n_button).text("Next");
+                    $(s_button).hide();
+                    $(n_button).show();
                 }
 
                 if(page_track > 0)
@@ -78,8 +77,19 @@ function prep_modal()
                     pages.hide();
                     pages.eq(page_track).show();
                 }
+            });
 
-
+            $(s_button).click(function() {
+                if(pages.length > 2) {
+                    var Loi = document.getElementById("Loi");
+                    if (Loi.value === "") {
+                        page_track = 1;
+                        pages.hide();
+                        pages.eq(page_track).show();
+                        $(s_button).hide();
+                        $(n_button).show();
+                    }
+                }
             });
 
       }
