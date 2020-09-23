@@ -72,7 +72,8 @@ body
 	font-size: 24px;
 	color: #333;
 	text-transform: uppercase;
-	font-weight: 400
+	font-weight: 400;
+	text-align: center;
 }
 
 #tabbed .title.small {
@@ -94,7 +95,8 @@ body
 	padding-bottom: 6px
 }
 #tabbed p {
-	display: block
+	display: block;
+	text-align: center;
 }
 
 #tabbed p.large {
@@ -275,6 +277,7 @@ body
   cursor: pointer;
   width: 100% !important;
   outline: none;
+  display: flex;
   font-size: 17px;
   transition: all 0.5s ease-out;
 }
@@ -284,30 +287,33 @@ body
 }
 
 .collapsible.active {
-	transition: all 0.2s ease-out;	
+	transition: all 0.2s ease-out;
 	border-radius: 1rem 1rem 0 0;
 	background-color: #444;
 }
 .drop-tile {
 	color: black;
-	height: 100%;
-	width: 95%;
+	flex: 0 0 95%;
 	position: relative;
-	display: inline-flex;
+	display: flex;
 	background-color: transparent;
 	border: none;
 	border-right: 1px;
 	border-radius: 1rem;
-	padding: 20px; 
+	padding: 20px;
 	text-align: left;
 	transition: all 0.5s ease-out;
 }
-
+@media screen and (max-width:930px) {
+	.drop-tile {
+		flex: 0 0 90%;
+		padding-right: 5px;
+	}
+}
 @media screen and (max-width:650px) {
 	.drop-tile {
 		display: inline-grid;
-		padding-right: 15px;
-		width: 90%;
+		padding-right: 0;
 	}
 	.bookmark {
 		width: 10%;
@@ -320,9 +326,9 @@ body
 	}
 }
 
-.collapsible:hover .drop-tile, 
-.collapsible.active .drop-tile, 
-.collapsible:hover .bookmark, 
+.collapsible:hover .drop-tile,
+.collapsible.active .drop-tile,
+.collapsible:hover .bookmark,
 .collapsible.active .bookmark{
 	color: white;
 }
@@ -331,16 +337,14 @@ body
 	font-weight: 500;
 }
 span.lft {
-	float: left; 
-	width: 40%;
-	padding-right: 20px;
+	flex: 0 0 34%;
 }
 span.mid {
-	width: 40%;
+	flex: 0 0 33%;
+	text-align: center;
 }
 span.rgt {
-	width: 20%;
-	float: right;
+	flex: 0 0 33%;
 	text-align: right;
 }
 .bookmark {
@@ -348,8 +352,10 @@ span.rgt {
 	width: 5%;
 	color: black;
 	position: relative;
-	display: inline-block;
-	top: 20px;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border: none;
 	background-color: transparent;
 	transition: all 0.5s ease-out;
@@ -388,7 +394,7 @@ span.rgt {
 }
 
 #tabbed .apply-cell {
-	width: 12% !important; 
+	width: 12% !important;
 	margin: 0 44% 10px 44%;
 }
 
@@ -411,12 +417,27 @@ span.rgt {
 }
 .btn-primary {
 	padding: 15px 40px;
-	border-radius: 1rem;	
+	border-radius: 1rem;
 }
 .modal-title {
 	display: grid;
 }
+.modal-title h2 {
+	font-size: 2.5rem;
+}
+.modal-title h3 {
+	font-size: 1.5rem;
+}
+@media screen and (max-width:650px) {
+	.modal-title h2 {
+		font-size: 2rem;
+	}
+	.modal-title h3 {
+		font-size: 1.25rem;
+	}
+}
 .modal-header .close {
+	padding: 1rem 1rem 1rem 0;
 	margin-left: -1px;
 }
 .modal-body, .modal-footer {
@@ -425,6 +446,10 @@ span.rgt {
 }
 .modal-body {
 	font-weight: 500;
+	margin-bottom: 50px;
+}
+.modal-split {
+	text-align: center;
 }
 input[type=file] {
 	margin: 0;
@@ -456,17 +481,17 @@ main {
 	background-color: #FFF9D6;
 }
 
-@media screen and (min-width:1065px) and (max-width:1400px) {
+@media screen and (min-width:1045px) and (max-width:1400px) {
 	.header-area {
 		height: 30px;
 	}
 }
-@media screen and (min-width:992px) and (max-width:1124px) {
+@media screen and (min-width:991px) and (max-width:1044px) {
 	.header-area {
 		height: 120px;
 	}
 }
-@media screen and (max-width:992px) {
+@media screen and (max-width:990px) {
 	.header-area {
 		height: 0;
 	}
@@ -481,4 +506,7 @@ main {
 }
 #site-header.hide {
   top: -32%;
+}
+textarea {
+	border: 1px solid #d1d3e2;
 }
